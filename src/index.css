@@ -10,7 +10,6 @@
 
     /* Text colors - High contrast with vibrant highlights */
     --text-primary: #f0f0ff; /* Crisp white with blue tint for readability */
-    --text-hover: #9d3411; /* Pure white for hover states */
     --text-secondary: #c7c7e0; /* Soft lavender for secondary text */
     --text-muted: #8a89a0; /* Muted violet-gray for less important info */
     --text-inverse: #0f0e15; /* Dark text for light backgrounds */
@@ -49,9 +48,7 @@
   .text-primary {
     color: var(--text-primary);
   }
-  .text-hover {
-    color: var(--text-hover);
-  }
+
   .text-secondary {
     color: var(--text-secondary);
   }

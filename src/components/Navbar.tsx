@@ -28,9 +28,11 @@ const Navbar = () => {
           </svg>
         </div>
 
-        <Link to="/" className="w-10">
+        <Link to="/" className="flex flex-row items-center w-max">
+          <h3 className="text-2xl font-bold text-primary">Logi</h3>
+
           <img
-            className="w-full object-cover"
+            className="w-8 mt-1 object-cover"
             src="/images/logo.png"
             alt="LogiQ"
           />
@@ -62,6 +64,65 @@ const Navbar = () => {
             </ul>
           </div>
         )}
+      </div>
+
+      {/* Desktop Navigaton Bar */}
+      <div>
+        <div className="hidden md:flex md:justify-between md:items-center px-5">
+          <Link
+            to="/"
+            className="flex flex-row items-center gap-x-12 justify-between w-max"
+          >
+            <div className="flex flex-row items-center">
+              <h3 className="text-2xl font-bold text-primary">Logi</h3>
+              <img
+                className="w-8 mt-1 object-cover"
+                src="/images/logo.png"
+                alt="LogiQ"
+              />
+            </div>
+
+            <ul className="flex space-x-6">
+              <li>
+                <Link
+                  to="/"
+                  className="text-primary hover:text-blue-400 transition-colors"
+                >
+                  Home
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/services"
+                  className="text-primary hover:text-blue-400 transition-colors"
+                >
+                  Services
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="/about"
+                  className="text-primary hover:text-blue-400 transition-colors"
+                >
+                  About
+                </Link>
+              </li>
+            </ul>
+          </Link>
+
+          <ul className="flex space-x-6">
+            <li>
+              <Link
+                to="/contact"
+                className="text-primary hover:text-blue-400 transition-colors"
+              >
+                Contact Now
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );

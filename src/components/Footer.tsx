@@ -22,7 +22,7 @@ const Footer = () => {
                 LogiQ
               </h3>
             </div>
-            <p className="text-secondary mb-6 max-w-md">
+            <p className="text-primary mb-6 max-w-md">
               Transform your ideas into reality with LogiQ, where innovation
               meets excellence.
             </p>
@@ -34,7 +34,7 @@ const Footer = () => {
               Location
             </h4>
             <div className="space-y-3">
-              <div className="flex items-start text-secondary">
+              <div className="flex items-start text-primary">
                 <MapPinIcon className="h-5 w-5 mr-2 mt-0.5 accent-primary flex-shrink-0" />
                 <div>
                   <p>Kannur, Kerala</p>
@@ -51,14 +51,14 @@ const Footer = () => {
             <div className="space-y-3 mb-6">
               <a
                 href="tel:+919847584237"
-                className="flex items-center text-secondary hover:text-hover transition-colors group"
+                className="flex items-center text-primary hover:text-blue-400 transition-colors group"
               >
                 <PhoneIcon className="h-5 w-5 mr-2 group-hover:accent-primary" />
                 <span>+91 9847584237</span>
               </a>
               <a
                 href="mailto:info@logiq.com"
-                className="flex items-center text-secondary hover:text-hover transition-colors group"
+                className="flex items-center text-primary hover:text-blue-400 transition-colors group"
               >
                 <EnvelopeIcon className="h-5 w-5 mr-2 group-hover:accent-primary" />
                 <span>info@logiq.com</span>
@@ -80,7 +80,7 @@ const Footer = () => {
               className="bg-accent hover:bg-glass border border-accent p-2 rounded-lg transition-all hover:glow-effect group"
             >
               <svg
-                className="h-5 w-5 text-secondary group-hover:accent-primary"
+                className="h-5 w-5 text-primary group-hover:accent-primary"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -95,7 +95,7 @@ const Footer = () => {
               className="bg-accent hover:bg-glass border border-accent p-2 rounded-lg transition-all hover:glow-effect group"
             >
               <svg
-                className="h-5 w-5 text-secondary group-hover:accent-success"
+                className="h-5 w-5 text-primary group-hover:accent-success"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -110,7 +110,7 @@ const Footer = () => {
               className="bg-accent hover:bg-glass border border-accent p-2 rounded-lg transition-all hover:glow-effect group"
             >
               <svg
-                className="h-5 w-5 text-secondary group-hover:accent-secondary"
+                className="h-5 w-5 text-primary group-hover:accent-secondary"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -129,19 +129,19 @@ const Footer = () => {
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link
                 to="/privacy"
-                className="text-muted hover:text-secondary text-sm transition-colors"
+                className="text-muted hover:text-blue-400 text-sm transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 to="/terms"
-                className="text-muted hover:text-secondary text-sm transition-colors"
+                className="text-muted hover:text-blue-400 text-sm transition-colors"
               >
                 Terms of Service
               </Link>
               {/* <a
                 href="/cookies"
-                className="text-muted hover:text-secondary text-sm transition-colors"
+                className="text-muted hover:text-blue-400 text-sm transition-colors"
               >
                 Cookie Policy
               </a> */}

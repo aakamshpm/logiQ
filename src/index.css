@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Background colors - Deep dark bases with vibrant accents */
+    --bg-primary: #0f0e15; /* Rich cosmic background for main UI */
+    --bg-secondary: #1e1b2c; /* Deep purple-tinged secondary surfaces */
+    --bg-accent: #2a2540; /* Vibrant accent background for interactive elements */
+    --bg-glass: #1e1b2ccc; /* Semi-transparent overlay with subtle glow */
+
+    /* Text colors - High contrast with vibrant highlights */
+    --text-primary: #f0f0ff; /* Crisp white with blue tint for readability */
+    --text-hover: #9d3411; /* Pure white for hover states */
+    --text-secondary: #c7c7e0; /* Soft lavender for secondary text */
+    --text-muted: #8a89a0; /* Muted violet-gray for less important info */
+    --text-inverse: #0f0e15; /* Dark text for light backgrounds */
+
+    /* Accent colors - Vibrant but balanced */
+    --accent-primary: #6c5ce7; /* Electric purple (main CTA, buttons) */
+    --accent-secondary: #00cecb; /* Cyan-turquoise (secondary actions) */
+    --accent-success: #00d166; /* Neon green (success states) */
+    --accent-warning: #ffb142; /* Golden amber (warnings) */
+    --accent-error: #ff4757; /* Vibrant coral red (errors/destructive) */
+
+    /* Border colors - Glowing edges */
+    --border-subtle: #2e2a3f; /* Subtle cosmic divider */
+    --border-default: #4a4365; /* Standard border with purple undertones */
+    --border-accent: #6c5ce755; /* Glowing accent border */
+  }
+}
+
+@layer utilities {
+  /* Background utilities */
+  .bg-primary {
+    background-color: var(--bg-primary);
+  }
+  .bg-secondary {
+    background-color: var(--bg-secondary);
+  }
+  .bg-accent {
+    background-color: var(--bg-accent);
+  }
+  .bg-glass {
+    background-color: var(--bg-glass);
+    backdrop-filter: blur(12px);
+  }
+
+  /* Text utilities */
+  .text-primary {
+    color: var(--text-primary);
+  }
+  .text-hover {
+    color: var(--text-hover);
+  }
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+  .text-muted {
+    color: var(--text-muted);
+  }
+  .text-inverse {
+    color: var(--text-inverse);
+  }
+
+  /* Accent utilities */
+  .accent-primary {
+    color: var(--accent-primary);
+  }
+  .accent-secondary {
+    color: var(--accent-secondary);
+  }
+  .accent-success {
+    color: var(--accent-success);
+  }
+  .accent-warning {
+    color: var(--accent-warning);
+  }
+  .accent-error {
+    color: var(--accent-error);
+  }
+
+  /* Border utilities */
+  .border-subtle {
+    border-color: var(--border-subtle);
+  }
+  .border-default {
+    border-color: var(--border-default);
+  }
+  .border-accent {
+    border-color: var(--border-accent);
+  }
+
+  /* Special effects */
+  .glow-effect {
+    box-shadow: 0 0 15px var(--accent-primary);
+  }
+  .text-glow {
+    text-shadow: 0 0 8px var(--accent-primary);
+  }
+}

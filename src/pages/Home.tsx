@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -44,12 +45,12 @@ const Home = () => {
         </p>
 
         <div className="mt-8">
-          <a
-            href="/services"
+          <Link
+            to="/services"
             className="inline-block px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-bold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
             Explore Our Services →
-          </a>
+          </Link>
         </div>
       </div>
     </div>

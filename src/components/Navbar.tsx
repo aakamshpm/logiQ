@@ -5,9 +5,9 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <nav className="bg-secondary w-full px-3 py-4">
+    <nav className="w-full fixed top-0 left-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/10">
       {/* Mobile Navigation Bar */}
-      <div className="flex flex-row justify-between items-center md:hidden">
+      <div className="flex flex-row justify-between items-center md:hidden p-4">
         <div
           className="cursor-pointer"
           onClick={() => setToggle((prev) => !prev)}
@@ -18,7 +18,7 @@ const Navbar = () => {
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="size-6 text-primary"
+            className="size-6 text-white"
           >
             <path
               strokeLinecap="round"
@@ -29,8 +29,9 @@ const Navbar = () => {
         </div>
 
         <Link to="/" className="flex flex-row items-center w-max">
-          <h3 className="text-2xl font-bold text-primary">Logi</h3>
-
+          <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 text-transparent bg-clip-text">
+            Logi
+          </h3>
           <img
             className="w-8 mt-1 object-cover"
             src="/images/logo.png"
@@ -39,25 +40,37 @@ const Navbar = () => {
         </Link>
 
         {toggle && (
-          <div className="absolute top-16 left-0 w-full bg-secondary shadow-lg p-4">
+          <div className="absolute top-16 left-0 w-full bg-white/10 backdrop-blur-md border-b border-white/10 p-4">
             <ul className="flex flex-col space-y-4">
               <li>
-                <Link to="/" className="text-primary">
+                <Link
+                  to="/"
+                  className="text-white hover:text-cyan-300 transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-primary ">
+                <Link
+                  to="/about"
+                  className="text-white hover:text-cyan-300 transition-colors"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-primary">
+                <Link
+                  to="/services"
+                  className="text-white hover:text-cyan-300 transition-colors"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-primary ">
+                <Link
+                  to="/contact"
+                  className="text-white hover:text-cyan-300 transition-colors"
+                >
                   Contact
                 </Link>
               </li>
@@ -66,62 +79,53 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* Desktop Navigaton Bar */}
-      <div>
-        <div className="hidden md:flex md:justify-between md:items-center px-5">
-          <Link
-            to="/"
-            className="flex flex-row items-center gap-x-12 justify-between w-max"
-          >
-            <div className="flex flex-row items-center">
-              <h3 className="text-2xl font-bold text-primary">Logi</h3>
-              <img
-                className="w-8 mt-1 object-cover"
-                src="/images/logo.png"
-                alt="LogiQ"
-              />
-            </div>
+      {/* Desktop Navigation Bar */}
+      <div className="hidden md:flex justify-between items-center p-4 px-8">
+        <Link to="/" className="flex flex-row items-center">
+          <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 text-transparent bg-clip-text">
+            Logi
+          </h3>
+          <img
+            className="w-8 mt-1 object-cover"
+            src="/images/logo.png"
+            alt="LogiQ"
+          />
+        </Link>
 
-            <ul className="flex space-x-6">
-              <li>
-                <Link
-                  to="/"
-                  className="text-primary hover:text-blue-400 transition-colors"
-                >
-                  Home
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/services"
-                  className="text-primary hover:text-blue-400 transition-colors"
-                >
-                  Services
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/about"
-                  className="text-primary hover:text-blue-400 transition-colors"
-                >
-                  About
-                </Link>
-              </li>
-            </ul>
-          </Link>
-
-          <ul className="flex space-x-6">
+        <div className="flex items-center gap-x-12">
+          <ul className="flex space-x-8">
             <li>
               <Link
-                to="/contact"
-                className="text-primary hover:text-blue-400 transition-colors"
+                to="/"
+                className="text-white hover:text-cyan-300 transition-colors"
               >
-                Contact Now
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/services"
+                className="text-white hover:text-cyan-300 transition-colors"
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                className="text-white hover:text-cyan-300 transition-colors"
+              >
+                About
               </Link>
             </li>
           </ul>
+
+          <Link
+            to="/contact"
+            className="px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-lg hover:from-cyan-500 hover:to-blue-600 transition-all duration-300"
+          >
+            Contact Now
+          </Link>
         </div>
       </div>
     </nav>

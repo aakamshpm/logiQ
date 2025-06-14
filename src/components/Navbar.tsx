@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from "./Button";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/10">
+    <nav className="w-full fixed top-0 left-0 z-50">
       {/* Mobile Navigation Bar */}
       <div className="flex flex-row justify-between items-center md:hidden p-4">
         <div
@@ -29,7 +29,7 @@ const Navbar = () => {
         </div>
 
         <Link to="/" className="flex flex-row items-center w-max">
-          <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 text-transparent bg-clip-text">
+          <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-violet-600 text-transparent bg-clip-text">
             Logi
           </h3>
           <img
@@ -43,34 +43,22 @@ const Navbar = () => {
           <div className="absolute top-16 left-0 w-full bg-white/10 backdrop-blur-md border-b border-white/10 p-4">
             <ul className="flex flex-col space-y-4">
               <li>
-                <Link
-                  to="/"
-                  className="text-white hover:text-cyan-300 transition-colors"
-                >
+                <Link to="/" className="text-white transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/about"
-                  className="text-white hover:text-cyan-300 transition-colors"
-                >
+                <Link to="/about" className="text-white transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/services"
-                  className="text-white hover:text-cyan-300 transition-colors"
-                >
+                <Link to="/services" className="text-white transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link
-                  to="/contact"
-                  className="text-white hover:text-cyan-300 transition-colors"
-                >
+                <Link to="/contact" className="text-white transition-colors">
                   Contact
                 </Link>
               </li>
@@ -80,52 +68,61 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Navigation Bar */}
-      <div className="hidden md:flex justify-between items-center p-4 px-8">
-        <Link to="/" className="flex flex-row items-center">
-          <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 text-transparent bg-clip-text">
-            Logi
-          </h3>
-          <img
-            className="w-8 mt-1 object-cover"
-            src="/images/logo.png"
-            alt="LogiQ"
-          />
-        </Link>
+      <div className="hidden md:relative md:flex p-4 px-8">
+        {/* Dark blurred base backdrop */}
+        <div className="absolute inset-0 bg-[#0a0018] backdrop-blur-sm z-0" />
 
-        <div className="flex items-center gap-x-12">
-          <ul className="flex space-x-8">
-            <li>
-              <Link
-                to="/"
-                className="text-white hover:text-cyan-300 transition-colors"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/services"
-                className="text-white hover:text-cyan-300 transition-colors"
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/about"
-                className="text-white hover:text-cyan-300 transition-colors"
-              >
-                About
-              </Link>
-            </li>
-          </ul>
+        {/* Ultra-vibrant violet gradient overlay */}
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-40 
+                    bg-gradient-to-b from-fuchsia-500/40 via-violet-600/30 to-transparent 
+                    rounded-full blur-[100px] z-10 pointer-events-none
+                    mix-blend-screen opacity-90"
+        />
 
-          <Link
-            to="/contact"
-            className="px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white rounded-lg hover:from-cyan-500 hover:to-blue-600 transition-all duration-300"
-          >
-            Contact Now
+        {/* Main content */}
+        <div className="relative z-20 flex flex-row justify-between w-full items-center">
+          <Link to="/" className="flex flex-row items-center">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-violet-600 text-transparent bg-clip-text">
+              Logi
+            </h3>
+            <img
+              className="w-8 mt-1 object-cover"
+              src="/images/logo.png"
+              alt="LogiQ"
+            />
           </Link>
+
+          <div className="flex items-center gap-x-12">
+            <ul className="flex space-x-8">
+              <li>
+                <Link
+                  to="/"
+                  className="text-white hover:text-pink-400 transition-colors"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-white hover:text-pink-400 transition-colors"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/about"
+                  className="text-white hover:text-pink-400 transition-colors"
+                >
+                  About
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <Button path="contact" text="Contact Us" />
         </div>
       </div>
     </nav>

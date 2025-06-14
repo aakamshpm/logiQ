@@ -7,7 +7,13 @@ const Navbar = () => {
   return (
     <nav className="w-full fixed top-0 left-0 z-50">
       {/* Mobile Navigation Bar */}
-      <div className="flex flex-row justify-between items-center md:hidden p-4">
+      <div className="relative flex flex-row bg-[#0a0018] justify-between items-center md:hidden p-4">
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-40 
+                    bg-gradient-to-b from-fuchsia-500/40 via-violet-600/30 to-transparent 
+                    rounded-full blur-[100px] z-10 pointer-events-none
+                    mix-blend-screen opacity-90"
+        />
         <div
           className="cursor-pointer"
           onClick={() => setToggle((prev) => !prev)}
@@ -40,25 +46,41 @@ const Navbar = () => {
         </Link>
 
         {toggle && (
-          <div className="absolute top-16 left-0 w-full bg-white/10 backdrop-blur-md border-b border-white/10 p-4">
+          <div className="absolute top-16 left-0 w-full bg-white/10 border-b border-white/10 p-4">
             <ul className="flex flex-col space-y-4">
               <li>
-                <Link to="/" className="text-white transition-colors">
+                <Link
+                  to="/"
+                  onClick={() => setToggle(false)}
+                  className="text-white transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-white transition-colors">
+                <Link
+                  onClick={() => setToggle(false)}
+                  to="/about"
+                  className="text-white transition-colors"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-white transition-colors">
+                <Link
+                  onClick={() => setToggle(false)}
+                  to="/services"
+                  className="text-white transition-colors"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-white transition-colors">
+                <Link
+                  onClick={() => setToggle(false)}
+                  to="/contact"
+                  className="text-white transition-colors"
+                >
                   Contact
                 </Link>
               </li>

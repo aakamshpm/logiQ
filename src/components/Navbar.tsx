@@ -46,13 +46,13 @@ const Navbar = () => {
         </Link>
 
         {toggle && (
-          <div className="absolute top-16 left-0 w-full bg-white/10 border-b border-white/10 p-4">
+          <div className="absolute top-16 left-0 w-full bg-white/10 backdrop-blur-sm border-b border-white/20 p-4 z-[60]">
             <ul className="flex flex-col space-y-4">
               <li>
                 <Link
                   to="/"
                   onClick={() => setToggle(false)}
-                  className="text-white transition-colors"
+                  className="text-white font-semibold transition-colors"
                 >
                   Home
                 </Link>
@@ -61,7 +61,7 @@ const Navbar = () => {
                 <Link
                   onClick={() => setToggle(false)}
                   to="/about"
-                  className="text-white transition-colors"
+                  className="text-white font-semibold transition-colors"
                 >
                   About
                 </Link>
@@ -70,7 +70,7 @@ const Navbar = () => {
                 <Link
                   onClick={() => setToggle(false)}
                   to="/services"
-                  className="text-white transition-colors"
+                  className="text-white font-semibold transition-colors"
                 >
                   Services
                 </Link>
@@ -79,7 +79,7 @@ const Navbar = () => {
                 <Link
                   onClick={() => setToggle(false)}
                   to="/contact"
-                  className="text-white transition-colors"
+                  className="text-white font-semibold transition-colors"
                 >
                   Contact
                 </Link>

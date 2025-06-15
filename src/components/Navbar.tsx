@@ -40,7 +40,7 @@ const Navbar = () => {
           </h3>
           <img
             className="w-8 mt-1 object-cover"
-            src="/images/logo.png"
+            src="/images/base_white.png"
             alt="LogiQ"
           />
         </Link>
@@ -109,8 +109,8 @@ const Navbar = () => {
               Logi
             </h3>
             <img
-              className="w-8 mt-1 object-cover"
-              src="/images/logo.png"
+              className="w-8 object-cover"
+              src="/images/base_white.png"
               alt="LogiQ"
             />
           </Link>

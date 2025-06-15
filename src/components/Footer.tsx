@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center mb-4">
               <img
-                src="/images/logo.png"
+                src="/images/base_white.png"
                 alt="LogiQ Logo"
                 className="h-10 w-auto mr-3"
               />

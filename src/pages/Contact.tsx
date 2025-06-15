@@ -1,5 +1,7 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import Button from "../components/Button";
+import { useSnackbar } from "notistack";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +13,9 @@ const Contact = () => {
     userType: "individual",
     projectDescription: "",
   });
+
+  const [loading, setLoading] = useState(false);
+  const { enqueueSnackbar } = useSnackbar();
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -24,9 +29,39 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData);
+    setLoading(true);
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID!;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID!;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY!;
+
+    try {
+      const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, {
+        publicKey: PUBLIC_KEY,
+      });
+
+      if (response) {
+        enqueueSnackbar("Our Team will get in touch with you soon!", {
+          variant: "success",
+        });
+      }
+    } catch (error) {
+      enqueueSnackbar("An error occurred while sending your request.", {
+        variant: "error",
+      });
+    } finally {
+      setLoading(false);
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        location: "",
+        projectType: "personal",
+        userType: "individual",
+        projectDescription: "",
+      });
+    }
   };
 
   return (
@@ -201,7 +236,7 @@ const Contact = () => {
             </div>
 
             <div className="flex justify-end">
-              <Button text="Submit Request" type="submit" />
+              <Button text="Submit Request" type="submit" loading={loading} />
             </div>
           </form>
         </div>

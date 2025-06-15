@@ -88,7 +88,7 @@ const Footer = () => {
                 className="flex items-center text-primary hover:text-blue-400 transition-colors group"
               >
                 <EnvelopeIcon className="h-5 w-5 mr-2 group-hover:accent-primary" />
-                <span>info@logiq.com</span>
+                <span>logiqtech2025@gmail.com</span>
               </a>
             </div>
           </div>

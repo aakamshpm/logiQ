@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import StudentMentorShipCard from "../components/StudentMentorShipCard";
 import { useEffect, useRef, useState } from "react";
 import WhatWeProvide from "../components/WhatWeProvide";
 

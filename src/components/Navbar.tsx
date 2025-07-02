@@ -14,6 +14,18 @@ const Navbar = () => {
                     rounded-full blur-[100px] z-10 pointer-events-none
                     mix-blend-screen opacity-90"
         />
+
+        <Link to="/" className="flex flex-row items-center w-max">
+          {/* <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-violet-600 text-transparent bg-clip-text">
+            Logi
+          </h3> */}
+          <img
+            className="w-8 mt-1 object-cover"
+            src="/images/base_white.png"
+            alt="LogiQ"
+          />
+        </Link>
+
         <div
           className="cursor-pointer"
           onClick={() => setToggle((prev) => !prev)}
@@ -34,20 +46,9 @@ const Navbar = () => {
           </svg>
         </div>
 
-        <Link to="/" className="flex flex-row items-center w-max">
-          <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-violet-600 text-transparent bg-clip-text">
-            Logi
-          </h3>
-          <img
-            className="w-8 mt-1 object-cover"
-            src="/images/base_white.png"
-            alt="LogiQ"
-          />
-        </Link>
-
         {toggle && (
           <div className="absolute top-16 left-0 w-full bg-white/10 backdrop-blur-sm border-b border-white/20 p-4 z-[60]">
-            <ul className="flex flex-col space-y-4">
+            <ul className="flex flex-col text-end space-y-4">
               <li>
                 <Link
                   to="/"
@@ -105,12 +106,13 @@ const Navbar = () => {
         {/* Main content */}
         <div className="relative z-20 flex flex-row justify-between w-full items-center">
           <Link to="/" className="flex flex-row items-center">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-violet-600 text-transparent bg-clip-text">
+            {/* <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-500 to-violet-600 text-transparent bg-clip-text">
               Logi
-            </h3>
+            </h3> */}
             <img
               className="w-8 object-cover"
               src="/images/base_white.png"
+              loading="lazy"
               alt="LogiQ"
             />
           </Link>
